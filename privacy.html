@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私策略 - Privacy Policy - AutoScheduler | Jerry开发工作室</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 8px;
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .lang-toggle button.active {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .lang-toggle button:hover:not(.active) {
+            background: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .back-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 40px 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 3rem;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .privacy-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .effective-date {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-content {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            margin: 1.5rem 0;
+        }
+
+        .highlight p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .list-item {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .list-item::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .privacy-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 1rem;
+            }
+
+            .lang-toggle {
+                top: 80px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="zh">中文</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div>
+                <div class="logo">AutoScheduler</div>
+                <div class="company">Jerry开发工作室 | Jerry Development Studio</div>
+            </div>
+            <a href="home.html" class="back-link" data-zh="← 返回首页" data-en="← Back to Home">← 返回首页</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="privacy-header">
+                <h1 class="privacy-title" data-zh="隐私策略" data-en="Privacy Policy">隐私策略</h1>
+                <p class="effective-date" data-zh="生效日期：2026年5月26日" data-en="Effective Date: May 26, 2026">生效日期：2026年5月26日</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="引言" data-en="Introduction">引言</h2>
+                <div class="section-content">
+                    <p data-zh="本隐私政策说明了 Jerry 开发工作室在您使用 https://jerryyoungx1124.github.io/Youngx/ 上的 AutoScheduler 服务时，如何收集、使用、存储和保护您的信息。通过使用本服务，即表示您同意本政策中描述的做法。" data-en="This Privacy Policy explains how Jerry Development Studio collects, uses, stores, and protects information when you use AutoScheduler at https://jerryyoungx1124.github.io/Youngx/. By using the service, you agree to the practices described in this policy.">
+                        本隐私政策说明了 Jerry 开发工作室在您使用 https://jerryyoungx1124.github.io/Youngx/ 上的 AutoScheduler 服务时，如何收集、使用、存储和保护您的信息。通过使用本服务，即表示您同意本政策中描述的做法。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="我们收集的信息" data-en="Information We Collect">我们收集的信息</h2>
+                <div class="section-content">
+                    <p data-zh="我们可能收集您直接提供的信息，例如您的姓名、电子邮件地址、账户详情以及您选择提交的任何其他信息。我们还可能收集有限的技术数据，包括设备信息、浏览器类型、日志数据和使用模式。" data-en="We may collect information you provide directly, such as your name, email address, account details, and any other information you choose to submit. We may also collect limited technical data, including device information, browser type, log data, and usage patterns.">
+                        我们可能收集您直接提供的信息，例如您的姓名、电子邮件地址、账户详情以及您选择提交的任何其他信息。我们还可能收集有限的技术数据，包括设备信息、浏览器类型、日志数据和使用模式。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="信息的使用方式" data-en="How We Use Information">信息的使用方式</h2>
+                <div class="section-content">
+                    <p data-zh="我们使用信息来提供和维护服务、回应查询、个性化您的体验、改进功能、检测滥用情况以及传达重要更新。" data-en="We use information to provide and maintain the service, respond to inquiries, personalize your experience, improve functionality, detect abuse, and communicate important updates.">
+                        我们使用信息来提供和维护服务、回应查询、个性化您的体验、改进功能、检测滥用情况以及传达重要更新。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="处理的合法依据" data-en="Legal Basis for Processing">处理的合法依据</h2>
+                <div class="section-content">
+                    <p data-zh="根据适用法律，我们在以下法律基础上处理个人数据：" data-en="We process personal data on the following legal bases under applicable law:"></p>
+                    <div class="list-item" data-zh="同意" data-en="Consent">同意</div>
+                    <div class="list-item" data-zh="合同" data-en="Contract">合同</div>
+                    <div class="list-item" data-zh="合法利益" data-en="Legitimate Interests">合法利益</div>
+                    <div class="list-item" data-zh="法律义务" data-en="Legal Obligation">法律义务</div>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="数据保留" data-en="Data Retention">数据保留</h2>
+                <div class="section-content">
+                    <p data-zh="我们仅保留必要的个人数据，以履行本政策中概述的目的。" data-en="We retain personal data only as long as necessary to fulfill the purposes outlined in this policy.">
+                        我们仅保留必要的个人数据，以履行本政策中概述的目的。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="Cookie" data-en="Cookies">Cookie</h2>
+                <div class="section-content">
+                    <p data-zh="我们使用 cookie 和类似技术来保持网站运行、记住偏好设置、衡量性能以及了解访问者与服务交互的方式。您通常可以通过浏览器调整 cookie 设置，但如果禁用 cookie，某些功能可能无法正常运行。" data-en="We use cookies and similar technologies to keep the site working, remember preferences, measure performance, and understand how visitors interact with the service. You can usually adjust cookie settings through your browser, though some features may not function properly if cookies are disabled.">
+                        我们使用 cookie 和类似技术来保持网站运行、记住偏好设置、衡量性能以及了解访问者与服务交互的方式。您通常可以通过浏览器调整 cookie 设置，但如果禁用 cookie，某些功能可能无法正常运行。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="第三方服务" data-en="Third-Party Services">第三方服务</h2>
+                <div class="section-content">
+                    <p data-zh="我们不会故意将您的个人信息分享给超出运行服务所需的基本托管或运营工具的第三方服务提供商。这可能包括使用数据、标识符、设备信息和支付相关信息，当需要提供服务时。" data-en="We do not intentionally share your personal information with third-party service providers beyond essential hosting or operational tools required to run the service. This may include usage data, identifiers, device information, and payment-related information when needed to provide the service.">
+                        我们不会故意将您的个人信息分享给超出运行服务所需的基本托管或运营工具的第三方服务提供商。这可能包括使用数据、标识符、设备信息和支付相关信息，当需要提供服务时。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="数据共享和销售" data-en="Data Sharing and Selling">数据共享和销售</h2>
+                <div class="section-content">
+                    <p data-zh="在法律允许且适用通知或披露中有所描述的情况下，我们可能会出售个人数据。" data-en="We may sell personal data where permitted by law and as described in any applicable notices or disclosures.">
+                        在法律允许且适用通知或披露中有所描述的情况下，我们可能会出售个人数据。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="安全和数据保护" data-en="Security and Data Protection">安全和数据保护</h2>
+                <div class="section-content">
+                    <p data-zh="我们使用合理的管理、技术和组织保障措施来保护信息免受未经授权的访问、丢失、滥用或篡改。没有任何系统是绝对安全的。" data-en="We use reasonable administrative, technical, and organizational safeguards designed to protect information from unauthorized access, loss, misuse, or alteration. No system is completely secure.">
+                        我们使用合理的管理、技术和组织保障措施来保护信息免受未经授权的访问、丢失、滥用或篡改。没有任何系统是绝对安全的。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="国际数据传输" data-en="International Data Transfers">国际数据传输</h2>
+                <div class="section-content">
+                    <p data-zh="可能会发生国际数据传输。数据可能会在您的国家以外进行处理，用于托管、分析或运营目的，并采取适当的保障措施，如合同保护和行业标准安全措施。" data-en="International data transfers may occur. Data may be processed outside your country for hosting, analytics, or operational purposes, with appropriate safeguards such as contractual protections and industry-standard security measures.">
+                        可能会发生国际数据传输。数据可能会在您的国家以外进行处理，用于托管、分析或运营目的，并采取适当的保障措施，如合同保护和行业标准安全措施。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="儿童隐私" data-en="Children's Privacy">儿童隐私</h2>
+                <div class="section-content">
+                    <p data-zh="我们不会故意收集13岁以下儿童的个人信息。" data-en="We do not knowingly collect personal information from children under 13 years of age.">
+                        我们不会故意收集13岁以下儿童的个人信息。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="用户权利" data-en="User Rights">用户权利</h2>
+                <div class="section-content">
+                    <p data-zh="您可以请求访问、更正、删除、数据可移植性以及撤回同意您的个人信息。我们会在合理时间内作出回应。" data-en="You may request access, correction, deletion, data portability, and withdraw consent of your personal information. We respond within a reasonable timeframe.">
+                        您可以请求访问、更正、删除、数据可移植性以及撤回同意您的个人信息。我们会在合理时间内作出回应。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="政策变更" data-en="Changes to This Policy">政策变更</h2>
+                <div class="section-content">
+                    <p data-zh="我们可能会不时更新本隐私政策，以反映我们实践、法律要求或运营需求的变化。当我们这样做时，我们将更新上面的生效日期，并在适当时提供额外通知。" data-en="We may update this Privacy Policy from time to time to reflect changes in our practices, legal requirements, or operational needs. When we do, we will revise the effective date above and, where appropriate, provide additional notice.">
+                        我们可能会不时更新本隐私政策，以反映我们实践、法律要求或运营需求的变化。当我们这样做时，我们将更新上面的生效日期，并在适当时提供额外通知。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="业务转让" data-en="Business Transfers">业务转让</h2>
+                <div class="section-content">
+                    <p data-zh="如果我们涉及合并、收购、融资、重组、破产或资产出售，您的信息可能会作为该交易的一部分转让，并遵守适用的法律要求。" data-en="If we are involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of assets, your information may be transferred as part of that transaction, subject to applicable legal requirements.">
+                        如果我们涉及合并、收购、融资、重组、破产或资产出售，您的信息可能会作为该交易的一部分转让，并遵守适用的法律要求。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="请勿跟踪" data-en="Do Not Track">请勿跟踪</h2>
+                <div class="section-content">
+                    <p data-zh="在技术可行的情况下，我们尊重浏览器请勿跟踪信号，但并非所有浏览器或服务都一致支持这些信号。" data-en="We respect browser Do Not Track signals where technically feasible, but not all browsers or services support these signals consistently.">
+                        在技术可行的情况下，我们尊重浏览器请勿跟踪信号，但并非所有浏览器或服务都一致支持这些信号。
+                    </p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title" data-zh="联系我们" data-en="Contact Information">联系我们</h2>
+                <div class="section-content">
+                    <div class="highlight">
+                        <p data-zh="如果您对本隐私政策或我们的数据实践有任何疑问，请通过以下方式联系 Jerry 开发工作室：" data-en="If you have questions about this Privacy Policy or our data practices, contact Jerry Development Studio at:">
+                            如果您对本隐私政策或我们的数据实践有任何疑问，请通过以下方式联系 Jerry 开发工作室：
+                        </p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                                <span data-zh="YoungYang1124@gmail.com" data-en="YoungYang1124@gmail.com">YoungYang1124@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-5L9 4H4zm3 6a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-zh="网站：https://jerryyoungx1124.github.io/Youngx/" data-en="Website: https://jerryyoungx1124.github.io/Youngx/">网站：https://jerryyoungx1124.github.io/Youngx/</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span data-zh="运营地点：中国" data-en="Location: China">运营地点：中国</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                <p data-zh="&copy; 2026 Jerry开发工作室. 保留所有权利。" data-en="&copy; 2026 Jerry Development Studio. All rights reserved.">&copy; 2026 Jerry开发工作室. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching
+        const langBtns = document.querySelectorAll('.lang-btn');
+        const elements = document.querySelectorAll('[data-zh]');
+
+        let currentLang = 'zh';
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                currentLang = lang;
+
+                // Update active button
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Update text content
+                elements.forEach(el => {
+                    if (lang === 'zh') {
+                        el.textContent = el.dataset.zh;
+                    } else {
+                        el.textContent = el.dataset.en;
+                    }
+                });
+
+                // Update lang attribute
+                document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            });
+        });
+    </script>
+</body>
+</html>
